@@ -1,0 +1,80 @@
+> db
+> show dbs
+> use mydb
+> db.createCollection("employees")
+> show collections
+> db.employees.insert({
+  "employeeId": 101,
+  "employeeName": "John Doe",
+  "employeeDepartment": "HR",
+  "employeeSalary": 34000  
+})
+
+> db.employees.insert({
+  "employeeId": 102,
+  "employeeName": "Jane Doe",
+  "employeeDepartment": "ADMIN",
+  "employeeSalary": 14000  
+})
+
+> db.employees.insert({
+  "employeeId": 103,
+  "employeeName": "Bob Martin",
+  "employeeDepartment": "DEVELOPER",
+  "employeeSalary": 64000  
+})
+
+> db.employees.find()
+
+> db.employees.find().pretty()
+
+> db.employees.find({employeeId: 101})
+
+> db.employees.insert({
+  "employeeId": 104,
+  "employeeName": "Jason Taylor",
+  "employeeDepartment": "DEVELOPER",
+  "employeeSalary": 74000  
+})
+
+> db.employees.find({employeeDepartment: "DEVELOPER"}).pretty()
+
+> db.employees.find({employeeDepartment: "DEVELOPER"}, {employeeId: 1, employeeName: 1}).pretty()
+
+>  db.employees.find({employeeDepartment: "DEVELOPER"}, {employeeId: 1, employeeName: 1, _id:0}).pretty()
+
+> db.employees.update({employeeId: 103}, {$set: {employeeSalary: 84000}})
+
+> db.employees.update({employeeId: 102}, {$set: {employeeName: "Jane", employeeSalary: 45000}})
+
+> db.employees.update({employeeId: 102}, {$set: {married: "Y"}})
+
+> db.employees.find({employeeId: 102}).pretty()
+
+> db.employees.remove({employeeId: 101})
+
+> db.employees.find().count()
+
+> db.employees.remove({})
+
+> db.employees.drop()
+
+> db.dropDatabase()
+
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
